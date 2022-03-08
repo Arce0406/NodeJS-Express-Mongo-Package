@@ -50,6 +50,9 @@ app.use(express.urlencoded({
 }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'src/public')));
+app.use('/images',express.static(path.join(__dirname, 'src/public/images')));
+app.use('/javascripts',express.static(path.join(__dirname, 'src/public/javascripts')));
+app.use('/stylesheets',express.static(path.join(__dirname, 'src/public/stylesheets')));
 
 // 將 request 導入路由器
 app.use(routes)

@@ -6,17 +6,17 @@ require('dotenv').config()
 /* serialize and deserialize cookies */
 passport.serializeUser((user, done) => {
     console.log('Serializing User...');
-    console.log(user);
+    // console.log(user);
     done(null, user.id)
 });
 
 passport.deserializeUser(async (id, done) => {
     console.log('Deserializing User...');
-    console.log(id);
+    // console.log(id);
     try {
         const user = await DiscordUser.findById(id);
         // if (!user) throw new Error('User not found');
-        console.log(user);
+        // console.log(user);
         if (user) done(null, user);
     } catch (err) {
         console.log(err);
@@ -31,8 +31,8 @@ passport.use(new Strategy({
     callbackURL: process.env.OAUTH2_DISCORD_CALLBACK_URL,
     scope: ['identify', 'email', 'guilds', 'guilds.join']
 }, async (accessToken, refreshToken, profile, done) => {
-    console.log(accessToken, refreshToken);
-    console.log(profile);
+    // console.log(accessToken, refreshToken);
+    // console.log(profile);
     try {
         //
         const result = await DiscordUser.findOne({

@@ -2,8 +2,14 @@ var express = require('express');
 var router = express.Router();
 
 /* GET home page. */
-router.get('/', isAuthorized, function (req, res, next) {
+router.get('/', function (req, res, next) {
   res.render('home', { user: req.user });
+});
+
+
+/* GET login page. */
+router.get('/login', isAuthorized, function (req, res, next) {
+  res.render('login', { user: req.user });
 });
 
 function isAuthorized(req, res, next) {

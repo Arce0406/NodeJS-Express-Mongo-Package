@@ -1,5 +1,9 @@
 var router = require('express').Router();
 
+// router.get('/', function (req, res, next) {
+//   res.render('dashboard', {user: req.user});
+// });
+
 router.get('/', isAuthorized, function (req, res, next) {
   res.render('dashboard', {user: req.user});
 });

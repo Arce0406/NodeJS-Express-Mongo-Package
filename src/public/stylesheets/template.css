@@ -1,0 +1,48 @@
+html,
+body {
+    height: 100%;
+    overflow: auto;
+}
+
+body {
+    padding-top: 56px;
+    padding-bottom: calc(24px+3rem+6rem);
+}
+
+.footer.is-fixed-bottom {
+    bottom: 0;
+}
+
+.footer.is-fixed-bottom,
+.footer.is-fixed-top {
+    left: 0;
+    position: fixed;
+    right: 0;
+    z-index: 30;
+}
+
+.sidebar-menu {
+    display: none;
+}
+
+@media screen and (min-width: 1024px) {
+    .sidebar-menu {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .sidebar-menu {
+        max-height: calc(100vh - 3.25rem);
+        overflow: auto;
+
+        background-color: #fff;
+        box-shadow: 0 8px 16px rgb(10 10 10 / 10%);
+        padding: 3rem 1.5rem;
+    }
+
+    .sidebar-menu.is-active {
+        display: block;
+    }
+
+}
