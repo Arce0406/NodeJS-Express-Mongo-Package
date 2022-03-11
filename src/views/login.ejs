@@ -3,7 +3,7 @@
 
 <head>
     <%- include('./partials/meta'); %>
-    <title>Dashboard</title>
+        <title>Dashboard</title>
 </head>
 
 <body class="pt-0">
@@ -42,14 +42,24 @@
                                     Remember me
                                 </label>
                             </div>
-                            <div class="field">
-                                <button class="button is-success">
-                                    Login
-                                </button>
-                                <a class="button is-info mt-1" href="/oauth2/discord">Login with Discord</a>
+
+                            <div class="field is-grouped">
+                                <p class="control">
+                                    <a class="button is-primary">
+                                        Login
+                                    </a>
+                                </p>
+                                <p class="control">
+                                    <a href="/oauth2/discord" class="button is-info">
+                                        <span class="icon is-small">
+                                            <i class="fa-brands fa-discord"></i>
+                                        </span>
+                                        Discord
+                                    </a>
+                                </p>
                             </div>
                         </form>
-                        
+
                     </div>
                 </div>
             </div>
